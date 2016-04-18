@@ -1,227 +1,331 @@
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Séries</title>
-		<link href="static/css/bootstrap.css" rel="stylesheet" />
-		<link href="static/css/custom-search.css" rel="stylesheet" />
-		<script src="static/js/jquery.min.js">
-		</script>
-		<link rel="stylesheet" href="static/css/bootstrap-table-expandable.css">
-		<script src="static/js/bootstrap-table-expandable.js"></script>
-	</head>
-	<body>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Séries</title>
+	<link href="static/css/bootstrap.css" rel="stylesheet" />
+	<link href="static/css/custom-search.css" rel="stylesheet" />
+	<script src="static/js/jquery.min.js">
+	</script>
+	<link rel="stylesheet" href="static/css/bootstrap-table-expandable.css">
+	<script src="static/js/bootstrap-table-expandable.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$(".header").click(function () {
+	    $header = $(this);
+	    //getting the next element
+	    $content = $header.next();
+	    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+	    $content.slideToggle(500, function () {
+	        //execute this after slideToggle is done
+	        //change text of header based on visibility of content div
+	        $('.header > button').text(function () {
+	            //change text based on condition
+	            return $content.is(":visible") ? "Cancelar" : "Nova Série";
+	        });
+	    });
+		});
+	});
+</script>
+</head>
+
+<body>
 	<div class="container">
 		<div class="row">
 			<nav class="navbar navbar-inverse">
-			  <div class="container-fluid">
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				  </button>
-				  <a class="navbar-brand" href="#">Banco de Dados III</a>
-				</div>
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Banco de Dados III</a>
+					</div>
 
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-				  <ul class="nav navbar-nav">
-					<li><a href="competidores.html">Competidores <span class="sr-only">(current)</span></a></li>
-					<li><a href="provas.html">Provas</a></li>
-					<li class="active"><a href="series.html">Séries</a></li>
-				  </ul>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+						<ul class="nav navbar-nav">
+							<li><a href="competidores.html">Competidores <span class="sr-only">(current)</span></a></li>
+							<li><a href="provas.html">Provas</a></li>
+							<li class="active"><a href="series.html">Séries</a></li>
+						</ul>
+					</div>
 				</div>
-			  </div>
 			</nav>
 		</div>
 	</div>
-		<div class="container">
+	<div class="container">
 		<div class="row">
-				<h1>Séries</h1>
-				<p>//Mostra todas as séries e dentro da row mostra os detalhes dos competidores</p>
+			<h1>Séries</h1>
+			<p>//Mostra todas as séries e dentro da row mostra os detalhes dos competidores</p>
+		</div>
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<table class="table table-hover table-expandable table-striped">
+					<thead>
+						<tr>
+							<th>Prova</th>
+							<th>Data</th>
+							<th>Etapa</th>
+							<th>#</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>United States of America</td>
+							<td>306,939,000</td>
+							<td>9,826,630 km2</td>
+							<td>English</td>
+						</tr>
+						<tr>
+							<td colspan="4">
+								<ul class="list-group">
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>United Kingdom </td>
+							<td>61,612,300</td>
+							<td>244,820 km2</td>
+							<td>English</td>
+						</tr>
+						<tr>
+							<td colspan="4">
+								<ul class="list-group">
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>India</td>
+							<td>1,147,995,904</td>
+							<td>3,287,240 km2</td>
+							<td>Hindi, English</td>
+						</tr>
+						<tr>
+							<td colspan="4">
+								<ul class="list-group">
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>Canada</td>
+							<td>33,718,000</td>
+							<td>9,984,670 km2</td>
+							<td>English, French</td>
+						</tr>
+						<tr>
+							<td colspan="4">
+								<ul class="list-group">
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>Germany</td>
+							<td>82,060,000</td>
+							<td>357,021 km2</td>
+							<td>German</td>
+						</tr>
+						<tr>
+							<td colspan="4">
+								<ul class="list-group">
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3"><input id="textinput" name="textinput" type="text" placeholder="" class="input-xlarge" required=""></div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">Cras justo odio</div>
+										<div class="col-md-3">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button>
+										</div>
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
+		</div>
+		<hr/>
 		<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-		<table class="table table-hover table-expandable table-striped">
-    <thead>
-      <tr>
-        <th>Prova</th>
-        <th>Data</th>
-        <th>Etapa</th>
-        <th>#</th>
-      </tr>
-    </thead>
-	<tbody>
-      <tr>
-        <td>United States of America</td>
-        <td>306,939,000</td>
-        <td>9,826,630 km2</td>
-        <td>English</td>
-      </tr>
-      <tr>
-        <td colspan="4">
-			<ul class="list-group">
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			</ul>
-		</td>
-      </tr>
-      <tr>
-        <td>United Kingdom </td>
-        <td>61,612,300</td>
-        <td>244,820 km2</td>
-        <td>English</td>
-      </tr>
-      <tr>
-        <td colspan="4">
-			<ul class="list-group">
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			</ul>
-		</td>
-      </tr>
-      <tr>
-        <td>India</td>
-        <td>1,147,995,904</td>
-        <td>3,287,240 km2</td>
-        <td>Hindi, English</td>
-      </tr>
-      <tr>
-                <td colspan="4">
-			<ul class="list-group">
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			</ul>
-		</td>
-      </tr>
-      <tr>
-        <td>Canada</td>
-        <td>33,718,000</td>
-        <td>9,984,670 km2</td>
-        <td>English, French</td>
-      </tr>
-      <tr>
-                <td colspan="4">
-			<ul class="list-group">
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			</ul>
-		</td>
-      </tr>
-      <tr>
-        <td>Germany</td>
-        <td>82,060,000</td>
-        <td>357,021 km2</td>
-        <td>German</td>
-      </tr>
-      <tr>
-                <td colspan="4">
-			<ul class="list-group">
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			  <li class="list-group-item">
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3">Cras justo odio</div>
-			  <div class="col-md-3"><button id="singlebutton" name="singlebutton" class="btn btn-success">Salvar</button></div>
-			  </li>
-			</ul>
-		</td>
-      </tr>
-    </tbody>
-  
-    </table>
-  </div>
+			<div class="container">
+				<div class="header">
+					<button id="singlebutton" name="singlebutton" class="btn btn-warning">Nova Série</button>
+				</div>
+		    <div class="content">
+					<form class="form-horizontal">
+					<fieldset>
+					<!-- Text input-->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="textinput">Data</label>
+					  <div class="col-md-4">
+					  <input id="textinput" name="textinput" type="date" placeholder="" class="form-control input-md" required="">
+
+					  </div>
+					</div>
+
+					<!-- Select Basic -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="selectbasic">Etapa</label>
+					  <div class="col-md-4">
+					    <select id="selectbasic" name="selectbasic" class="form-control">
+					      <option value="1">Option one</option>
+					      <option value="2">Option two</option>
+					    </select>
+					  </div>
+					</div>
+
+					<!-- Select Multiple -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="selectmultiple">Competidores</label>
+					  <div class="col-md-4">
+					    <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+					      <option value="1">Option one</option>
+					      <option value="2">Option two</option>
+					    </select>
+					  </div>
+					</div>
+
+					<!-- Button -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="singlebutton"></label>
+					  <div class="col-md-4">
+					    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Salvar</button>
+					  </div>
+					</div>
+
+					</fieldset>
+					</form>
+				</div>
+			</div>
 		</div>
-		</div>
-		<script type="text/javascript">
+	</div>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36251023-1']);
+		_gaq.push(['_setDomainName', 'jqueryscript.net']);
+		_gaq.push(['_trackPageview']);
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-	</body>
 </html>
