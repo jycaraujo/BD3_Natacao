@@ -6874,3 +6874,7 @@ legend {
 .modal .close {
   color: #333333;
 }
+.container .content {
+    display: none;
+    padding : 5px;
+}
