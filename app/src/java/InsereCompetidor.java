@@ -7,6 +7,9 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -38,8 +41,9 @@ public class InsereCompetidor extends HttpServlet
         {
             String nome = request.getParameter("nome");
             String nascimento = request.getParameter("nascimento");
-            Competidor competidor = new Competidor(2, nome, 01, 01, 2015);
-            competidor.Insert();
+            Competidor competidor = new Competidor(4, nome, DB.dateFormat.parse(nascimento));
+            DB.Insert(competidor);
+            List<Competidor> cs = DB.SelectAll(Competidor.class);
             RequestDispatcher r = request.getRequestDispatcher("competidores.jsp");
             r.forward(request, response);
 //            String patrocinador = request.getParameter("patrocinador");

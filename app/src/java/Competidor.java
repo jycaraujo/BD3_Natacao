@@ -13,17 +13,19 @@ import java.util.Date;
  *
  * @author Joyce
  */
-public class Competidor extends Tabela
+public class Competidor
 {
     int id;
     String nome;
-    Calendar nascimento;
+    Date nascimento_date;
     
-    public Competidor(int id, String nome, int day, int month, int year) throws ParseException
+    public Competidor()
+    {}
+    
+    public Competidor(int id, String nome, Date nascimento) throws ParseException
     {
         this.id = id;
         this.nome = nome;
-        this.nascimento = format.getCalendar();
-        this.nascimento.set(year, month - 1, day);
+        this.nascimento_date = nascimento;
     }
 }
